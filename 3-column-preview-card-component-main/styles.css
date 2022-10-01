@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+
+:root {
+    --sedan-color: hsl(31, 77%, 52%);
+    --suv-color: hsl(184, 100%, 22%);
+    --luxury-color: hsl(179, 100%,13%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    color: #fff;
+    height: 100vh;
+    margin: 0;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+}
+
+.card-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 600px;
+}
+
+.card{
+    padding: 40px;
+}
+
+.card h3 {
+    text-transform: uppercase;
+}
+
+.card p {
+    font-size: 15px;
+    color: hsla(0, 0%, 100%, 0.75);
+}
+
+.card.sedan {
+    background-color: var(--sedan-color);
+    border-radius: 10px 0 0 10px;
+}
+
+.card.sedan .learn-btn {
+    color: var(--sedan-color)
+}
+
+.card.suv {
+    background-color: var(--suv-color);
+}
+
+.card.suv .learn-btn {
+    color: var(--suv-color);
+}
+
+.card.luxury {
+    background-color: var(--luxury-color);
+    border-radius: 0 10px 10px 0;
+}
+
+.card.luxury .learn-btn {
+    color: var(--luxury-color)
+}
+
+.learn-btn {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 125px;
+    cursor: pointer;
+}
+
+.card.sedan .learn-btn:active,
+.card.suv .learn-btn:active,
+.card.luxury .learn-btn:active {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+@media screen and (max-width: 500px) {
+    .card-container {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .card.sedan {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .card.luxury {
+        border-radius: 0 0 10px 10px;
+    }
+}
